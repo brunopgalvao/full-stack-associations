@@ -3,9 +3,10 @@ const Product = require('../models/product')
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+const insertData = async () => {
+  // reset database
+  await db.dropDatabase()
 
-const main = async () => {
   const user1 = new User({
     username: 'bruno',
     email: 'root@super.gmail.com',
@@ -42,6 +43,7 @@ const main = async () => {
   })
   await user4.save()
 
+  // products data that we want inserted into database
   const products = [
     {
       name: 'Product 001',
@@ -231,17 +233,17 @@ const main = async () => {
     },
   ]
 
+  // insert products into database
   await Product.insertMany(products)
-  console.log('Created products!')
+  console.log('Created users & products!')
 
   user3.products = await Product.find({ userId: user3 })
   await user3.save()
   user4.products = await Product.find({ userId: user4 })
   await user4.save()
-}
-const run = async () => {
-  await main()
+
+  // close database connection. done.
   db.close()
 }
 
-run()
+insertData()

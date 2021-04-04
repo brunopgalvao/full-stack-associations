@@ -46,12 +46,10 @@ const Products = () => {
     }
   }
 
-  useEffect(() => {
-    if (isChanged) {
-      handleSort()
-      setIsChanged(false)
-    }
-  }, [queriedProducts])
+  if (isChanged) {
+    handleSort()
+    setIsChanged(false)
+  }
 
   const handleSearch = (event) => {
     const newQueriedProducts = allProducts.filter((product) =>

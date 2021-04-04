@@ -17,4 +17,14 @@ app.use('/api', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+app.listen(PORT, () => {
+    if (process.env.NODE_ENV === 'production') {
+        console.log(
+          `💻  => PRODUCTION: Application running on port ${PORT}\n\n`,
+        )
+      } else {
+        console.log(
+          `💻  => Express web server application running in browser at http://localhost:${PORT}\n\n`,
+        )
+      }
+})
