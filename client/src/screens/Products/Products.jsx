@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Products.css'
+
 import Product from '../../components/Product/Product'
 import Search from '../../components/Search/Search'
 import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort"
@@ -7,7 +8,7 @@ import Sort from '../../components/Sort/Sort'
 import Layout from '../../components/shared/Layout/Layout'
 import { getProducts } from '../../services/products'
 
-const Products = (props) => {
+const Products = () => {
   const [allProducts, setAllProducts] = useState([])
   const [queriedProducts, setQueriedProducts] = useState([])
   const [sortType, setSortType] = useState([])
@@ -22,6 +23,7 @@ const Products = (props) => {
   }, [])
 
   const handleSort = type => {
+    console.log("Sort called.")
     setSortType(type)
     switch (type) {
       case "name-ascending":
@@ -41,23 +43,35 @@ const Products = (props) => {
     }
   }
 
+  useEffect(() => {
+    const sort = () => handleSort(sortType)
+    sort()
+  }, [queriedProducts])
+
   const handleSearch = event => {
     const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
+    setQueriedProducts(newQueriedProducts)
   }
 
   const handleSubmit = event => event.preventDefault()
 
-  const productsJSX = queriedProducts.map((product, index) =>
-    <Product _id={product._id} name={product.name} imgURL={product.imgURL} price={product.price} key={index} />
-  )
-
   return (
-    <Layout user={props.user}>
+    <Layout>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
-      <div className="products">
-        {productsJSX}
+      <div className='products'>
+        {queriedProducts.map((product, index) => {
+          console.log('Rendering product.' + product.price)
+          return (
+            <Product
+              _id={product._id}
+              name={product.name}
+              imgURL={product.imgURL}
+              price={product.price}
+              key={index}
+            />
+          )
+        })}
       </div>
     </Layout>
   )
