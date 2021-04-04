@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Products.css'
 
 import Product from '../../components/Product/Product'
 import Search from '../../components/Search/Search'
-import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort"
+import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 import Sort from '../../components/Sort/Sort'
 import Layout from '../../components/shared/Layout/Layout'
 import { getProducts } from '../../services/products'
@@ -11,7 +11,8 @@ import { getProducts } from '../../services/products'
 const Products = () => {
   const [allProducts, setAllProducts] = useState([])
   const [queriedProducts, setQueriedProducts] = useState([])
-  const [sortType, setSortType] = useState([])
+  const [isChanged, setIsChanged] = useState(false)
+  const sortType = useRef('name-ascending')
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,21 +23,23 @@ const Products = () => {
     fetchProducts()
   }, [])
 
-  const handleSort = type => {
-    console.log("Sort called.")
-    setSortType(type)
-    switch (type) {
-      case "name-ascending":
-        setQueriedProducts(AZ(queriedProducts))
+  const handleSort = (type) => {
+    if (type !== '' && type !== undefined) {
+      sortType.current = type
+    }
+
+    switch (sortType.current) {
+      case 'name-ascending':
+        setQueriedProducts([...AZ(queriedProducts)])
         break
-      case "name-descending":
-        setQueriedProducts(ZA(queriedProducts))
+      case 'name-descending':
+        setQueriedProducts([...ZA(queriedProducts)])
         break
-      case "price-ascending":
-        setQueriedProducts(lowestFirst(queriedProducts))
+      case 'price-ascending':
+        setQueriedProducts([...lowestFirst(queriedProducts)])
         break
-      case "price-descending":
-        setQueriedProducts(highestFirst(queriedProducts))
+      case 'price-descending':
+        setQueriedProducts([...highestFirst(queriedProducts)])
         break
       default:
         break
@@ -44,24 +47,28 @@ const Products = () => {
   }
 
   useEffect(() => {
-    const sort = () => handleSort(sortType)
-    sort()
+    if (isChanged) {
+      handleSort()
+      setIsChanged(false)
+    }
   }, [queriedProducts])
 
-  const handleSearch = event => {
-    const newQueriedProducts = allProducts.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+  const handleSearch = (event) => {
+    const newQueriedProducts = allProducts.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    )
     setQueriedProducts(newQueriedProducts)
+    setIsChanged(true)
   }
 
-  const handleSubmit = event => event.preventDefault()
+  const handleSubmit = (event) => event.preventDefault()
 
   return (
     <Layout>
       <Search onSubmit={handleSubmit} onChange={handleSearch} />
-      <Sort onSubmit={handleSubmit} onChange={handleSort} />
+      <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <div className='products'>
         {queriedProducts.map((product, index) => {
-          console.log('Rendering product.' + product.price)
           return (
             <Product
               _id={product._id}
@@ -76,6 +83,5 @@ const Products = () => {
     </Layout>
   )
 }
-
 
 export default Products
