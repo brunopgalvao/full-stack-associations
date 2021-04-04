@@ -12,7 +12,8 @@ const Products = () => {
   const [allProducts, setAllProducts] = useState([])
   const [queriedProducts, setQueriedProducts] = useState([])
   const [isChanged, setIsChanged] = useState(false)
-  const sortType = useRef('name-ascending')
+  const [sortType, setSortType] = useState(false)
+  // const sortType = useRef('name-ascending')
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,10 +26,11 @@ const Products = () => {
 
   const handleSort = (type) => {
     if (type !== '' && type !== undefined) {
-      sortType.current = type
+      // sortType.current = type
+      setSortType(type)
     }
 
-    switch (sortType.current) {
+    switch (type) {
       case 'name-ascending':
         setQueriedProducts([...AZ(queriedProducts)])
         break
@@ -47,7 +49,7 @@ const Products = () => {
   }
 
   if (isChanged) {
-    handleSort()
+    handleSort(sortType)
     setIsChanged(false)
   }
 
