@@ -9,7 +9,7 @@ const Products = () => {
   const [products, setProducts] = useState([])
   const [searchResult, setSearchResult] = useState([])
   const [applySort, setApplySort] = useState(false)
-  const [sortType, setSortType] = useState(false)
+  const [sortType, setSortType] = useState('name-ascending')
 
   useEffect(() => {
     const fetchProducts = async () => {
