@@ -2,9 +2,6 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 const Product = require('../models/product')
-const db = require('../db/connection')
-
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11
 const TOKEN_KEY = process.env.TOKEN_KEY || 'areallylonggoodkey'

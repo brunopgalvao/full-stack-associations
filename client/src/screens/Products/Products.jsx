@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Products.css'
 
 import Product from '../../components/Product/Product'
@@ -9,66 +9,62 @@ import Layout from '../../components/shared/Layout/Layout'
 import { getProducts } from '../../services/products'
 
 const Products = () => {
-  const [allProducts, setAllProducts] = useState([])
-  const [queriedProducts, setQueriedProducts] = useState([])
-  const [isChanged, setIsChanged] = useState(false)
+  const [products, setProducts] = useState([])
+  const [searchResult, setSearchResult] = useState([])
+  const [applySort, setApplySort] = useState(false)
   const [sortType, setSortType] = useState(false)
-  // const sortType = useRef('name-ascending')
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const products = await getProducts()
-      setAllProducts(products)
-      setQueriedProducts(products)
+      const allProducts = await getProducts()
+      setProducts(allProducts)
+      setSearchResult(allProducts)
     }
     fetchProducts()
   }, [])
 
   const handleSort = (type) => {
     if (type !== '' && type !== undefined) {
-      // sortType.current = type
       setSortType(type)
     }
 
     switch (type) {
       case 'name-ascending':
-        setQueriedProducts([...AZ(queriedProducts)])
+        setSearchResult(AZ(searchResult))
         break
       case 'name-descending':
-        setQueriedProducts([...ZA(queriedProducts)])
+        setSearchResult(ZA(searchResult))
         break
       case 'price-ascending':
-        setQueriedProducts([...lowestFirst(queriedProducts)])
+        setSearchResult(lowestFirst(searchResult))
         break
       case 'price-descending':
-        setQueriedProducts([...highestFirst(queriedProducts)])
+        setSearchResult(highestFirst(searchResult))
         break
       default:
         break
     }
   }
 
-  if (isChanged) {
+  if (applySort) {
     handleSort(sortType)
-    setIsChanged(false)
+    setApplySort(false)
   }
 
   const handleSearch = (event) => {
-    const newQueriedProducts = allProducts.filter((product) =>
-      product.name.toLowerCase().includes(event.target.value.toLowerCase())
-    )
-    setQueriedProducts(newQueriedProducts)
-    setIsChanged(true)
+    const results = products.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    setSearchResult(results)
+    setApplySort(true)
   }
 
-  const handleSubmit = (event) => event.preventDefault()
+  const handleSubmit = event => event.preventDefault()
 
   return (
     <Layout>
-      <Search onSubmit={handleSubmit} onChange={handleSearch} />
+      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
       <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <div className='products'>
-        {queriedProducts.map((product, index) => {
+        {searchResult.map((product, index) => {
           return (
             <Product
               _id={product._id}
