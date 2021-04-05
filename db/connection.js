@@ -1,5 +1,7 @@
-const mongoose = require('mongoose')
-const chalk = require('chalk')
+// const mongoose = require('mongoose')
+import mongoose from 'mongoose'
+// const chalk = require('chalk')
+import chalk from 'chalk'
 
 let MONGODB_URI =
   process.env.PROD_MONGODB ||
@@ -30,4 +32,4 @@ mongoose.connection.on('disconnected', () => console.log(chalk.bold(`Disconnecte
 mongoose.connection.on('error', (error) => console.error(chalk.red(`MongoDB connection error: ${error}`)))
 
 // Export the connection
-module.exports = mongoose.connection
+export default mongoose.connection

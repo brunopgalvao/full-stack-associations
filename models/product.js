@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const Product = new Schema(
@@ -7,9 +7,9 @@ const Product = new Schema(
     imgURL: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: String, required: true },
-    userId: { type: Schema.Types.ObjectId, ref: 'users' }
+    userId: { type: Schema.Types.ObjectId, ref: 'users' },
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('products', Product)
+export default mongoose.model('products', Product)

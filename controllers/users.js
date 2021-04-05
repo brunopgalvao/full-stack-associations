@@ -1,7 +1,8 @@
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-const User = require('../models/user')
-const Product = require('../models/product')
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+
+import User from '../models/user.js'
+import Product from '../models/product.js'
 
 const SALT_ROUNDS = process.env.SALT_ROUNDS || 11
 const TOKEN_KEY = process.env.TOKEN_KEY || 'areallylonggoodkey'
@@ -11,7 +12,7 @@ const today = new Date()
 const exp = new Date(today)
 exp.setDate(today.getDate() + 30)
 
-const signUp = async (req, res) => {
+export const signUp = async (req, res) => {
   try {
     const { username, email, password } = req.body
     const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
@@ -38,10 +39,12 @@ const signUp = async (req, res) => {
   }
 }
 
-const signIn = async (req, res) => {
+export const signIn = async (req, res) => {
   try {
     const { email, password } = req.body
-    const user = await User.findOne({ email: email }).select('username email roles password_digest')
+    const user = await User.findOne({ email: email }).select(
+      'username email roles password_digest'
+    )
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
         id: user._id,
@@ -62,7 +65,7 @@ const signIn = async (req, res) => {
   }
 }
 
-const verify = async (req, res) => {
+export const verify = async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1]
     const payload = jwt.verify(token, TOKEN_KEY)
@@ -75,9 +78,9 @@ const verify = async (req, res) => {
   }
 }
 
-const changePassword = async (req, res) => {}
+export const changePassword = async (req, res) => {}
 
-const getUserProducts = async (req, res) => {
+export const getUserProducts = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
     const userProducts = await Product.find({ userId: user._id })
@@ -88,10 +91,12 @@ const getUserProducts = async (req, res) => {
   }
 }
 
-const getUserProduct = async (req, res) => {
+export const getUserProduct = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    const userProduct = await Product.findById(req.params.productId).populate("userId")
+    const userProduct = await Product.findById(req.params.productId).populate(
+      'userId'
+    )
     if (userProduct.userId.equals(user._id)) {
       return res.json(userProduct)
     }
@@ -104,7 +109,7 @@ const getUserProduct = async (req, res) => {
   }
 }
 
-const createUserProduct = async (req, res) => {
+export const createUserProduct = async (req, res) => {
   try {
     if (await User.findById(req.body.userId)) {
       const userProduct = new Product(req.body)
@@ -118,7 +123,7 @@ const createUserProduct = async (req, res) => {
   }
 }
 
-const updateUserProduct = async (req, res) => {
+export const updateUserProduct = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
       await Product.findByIdAndUpdate(
@@ -143,7 +148,7 @@ const updateUserProduct = async (req, res) => {
   }
 }
 
-const deleteUserProduct = async (req, res) => {
+export const deleteUserProduct = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
       const deleted = await Product.findByIdAndDelete(req.params.productId)
@@ -157,16 +162,4 @@ const deleteUserProduct = async (req, res) => {
     console.log(error)
     res.status(500).json({ error: error.message })
   }
-}
-
-module.exports = {
-  signUp,
-  signIn,
-  verify,
-  changePassword,
-  getUserProducts,
-  getUserProduct,
-  createUserProduct,
-  updateUserProduct,
-  deleteUserProduct,
 }

@@ -1,5 +1,5 @@
-const { Router } = require('express')
-const controllers = require('../controllers/users')
+import { Router } from 'express'
+import * as controllers from '../controllers/users.js'
 
 const router = Router()
 
@@ -14,4 +14,4 @@ router.post('/users/:id/products', controllers.createUserProduct)
 router.put('/users/:id/products/:productId', controllers.updateUserProduct)
 router.delete('/users/:id/products/:productId', controllers.deleteUserProduct)
 
-module.exports = router
+export default router

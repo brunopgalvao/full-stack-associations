@@ -1,6 +1,6 @@
-const { Router } = require('express')
-const controllers = require('../controllers/products')
-const restrict = require('../helpers/restrict')
+import { Router } from 'express'
+import * as controllers from '../controllers/products.js'
+import restrict from '../helpers/restrict.js'
 
 const router = Router()
 
@@ -10,4 +10,4 @@ router.post('/products', restrict, controllers.createProduct)
 router.put('/products/:id', restrict, controllers.updateProduct)
 router.delete('/products/:id', restrict, controllers.deleteProduct)
 
-module.exports = router
+export default router
