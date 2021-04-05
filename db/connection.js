@@ -1,6 +1,4 @@
-// const mongoose = require('mongoose')
 import mongoose from 'mongoose'
-// const chalk = require('chalk')
 import chalk from 'chalk'
 
 let MONGODB_URI =
