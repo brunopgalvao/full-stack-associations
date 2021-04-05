@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './Products.css'
 
-import Product from '../../components/Product/Product'
-import Search from '../../components/Search/Search'
+import { Layout, Product, Search, Sort } from '../../components'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
-import Sort from '../../components/Sort/Sort'
-import Layout from '../../components/shared/Layout/Layout'
 import { getProducts } from '../../services/products'
 
 const Products = () => {
@@ -52,12 +49,14 @@ const Products = () => {
   }
 
   const handleSearch = (event) => {
-    const results = products.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    const results = products.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    )
     setSearchResult(results)
     setApplySort(true)
   }
 
-  const handleSubmit = event => event.preventDefault()
+  const handleSubmit = (event) => event.preventDefault()
 
   return (
     <Layout>
