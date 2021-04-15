@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './ProductEdit.css'
 import { useParams, Redirect } from 'react-router-dom'
 import { Layout } from '../../components'

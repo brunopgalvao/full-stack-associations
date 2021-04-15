@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './ProductCreate.css'
 import { Layout } from '../../components'
 import { Redirect } from 'react-router-dom'

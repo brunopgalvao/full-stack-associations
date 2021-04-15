@@ -1,11 +1,13 @@
-import React from 'react'
+// import React from 'react'
 import './Home.css'
-import { Layout } from '../../components'
+import { Layout, ProductCards } from '../../components'
 
 const Home = (props) => {
   return (
     <Layout user={props.user}>
-      <div className='home'></div>
+      <div className='home'>
+        <ProductCards />
+      </div>
     </Layout>
   )
 }

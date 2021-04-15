@@ -22,9 +22,9 @@ db.on('connected', () => {
   console.log(chalk.bold('Connected to MongoDB!'))
   app.listen(PORT, () => {
     if (process.env.NODE_ENV === 'production') {
-      console.log(`Express Server running in production on port ${PORT}\n\n`)
+      console.log(`Express server running in production on port ${PORT}\n\n`)
     } else {
-      console.log(chalk.bold(`Express Server running in development on: http://localhost:${PORT}`))
+      console.log(chalk.bold(`Express server running in development on: http://localhost:${PORT}`))
     }
   })
 })

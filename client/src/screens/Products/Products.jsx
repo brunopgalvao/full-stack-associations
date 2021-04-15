@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './Products.css'
 
 import { Layout, Product, Search, Sort } from '../../components'
 import { AZ, ZA, lowestFirst, highestFirst } from '../../utils/sort'
 import { getProducts } from '../../services/products'
 
-const Products = () => {
+const Products = (props) => {
   const [products, setProducts] = useState([])
   const [searchResult, setSearchResult] = useState([])
   const [applySort, setApplySort] = useState(false)
@@ -59,7 +59,7 @@ const Products = () => {
   const handleSubmit = (event) => event.preventDefault()
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
       <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <div className='products'>
