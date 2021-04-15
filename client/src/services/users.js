@@ -23,9 +23,9 @@ export const signIn = async (credentials) => {
   }
 }
 
-export const signOut = async (user) => {
+export const signOut = async () => {
   try {
-    localStorage.clear()
+    localStorage.removeItem("token")
     return true
   } catch (error) {
     throw error

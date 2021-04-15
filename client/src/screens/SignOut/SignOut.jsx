@@ -1,18 +1,21 @@
 import { useEffect } from 'react'
 import { signOut } from '../../services/users'
-import { useHistory } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
 
 const SignOut = (props) => {
-    const { clearUser, user } = props
-    const history = useHistory()
+  const { setUser } = props
+  const history = useHistory()
 
-    useEffect(() => {
-        signOut(user)
-            .then(() => clearUser())
-            .finally(() => history.push('/'))
-    }, [history, clearUser, user])
+  useEffect(() => {
+    const signOutUser = async () => {
+      await signOut()
+      setUser(null)
+      history.push('/')
+    }
+    signOutUser()
+  }, [history, setUser])
 
-    return ''
+  return ''
 }
 
 export default SignOut

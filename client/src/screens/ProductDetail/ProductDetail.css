@@ -43,7 +43,23 @@
     justify-content: space-evenly;
 }
 
-.edit-button, .delete-button {
+.edit-button {
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    width: 20%;
+    align-self: center;
+    margin-top: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 5%;
+    box-shadow: 2px 2px 10px 2px #CECECE;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.delete-button {
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -56,6 +72,7 @@
     border: none;
     box-shadow: 2px 2px 10px 2px #CECECE;
     cursor: pointer;
+    padding: 2px;
 }
 
 .edit-link {
@@ -88,16 +105,8 @@
     .product-detail {
         padding: 0px;
         padding-top: 120px;
-        /* margin: 0px; */
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; */
     }
     .button-container {
-        /* display: flex;
-        justify-content: space-evenly;
-        padding-top: 0px; */
         padding: 20px;
         padding-bottom: 80px;
     }

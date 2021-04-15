@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './screens/Home/Home'
 import Products from './screens/Products/Products'
@@ -22,11 +22,6 @@ const App = () => {
     fetchUser()
   }, [])
 
-  const clearUser = () => {
-    localStorage.removeItem("token")
-    setUser(null)
-  }
-
   return (
     <div className="app">
       <Switch>
@@ -40,7 +35,7 @@ const App = () => {
           <SignIn setUser={setUser} />
         </Route>
         <Route path="/sign-out">
-          <SignOut setUser={setUser} clearUser={clearUser} />
+          <SignOut setUser={setUser} />
         </Route>
         <Route exact path="/products">
           <Products user={user} />
