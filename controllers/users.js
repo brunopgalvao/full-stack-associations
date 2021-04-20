@@ -94,9 +94,7 @@ export const getUserProducts = async (req, res) => {
 export const getUserProduct = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    const userProduct = await Product.findById(req.params.productId).populate(
-      'userId'
-    )
+    const userProduct = await Product.findById(req.params.productId).populate('userId')
     if (userProduct.userId.equals(user._id)) {
       return res.json(userProduct)
     }
@@ -126,20 +124,8 @@ export const createUserProduct = async (req, res) => {
 export const updateUserProduct = async (req, res) => {
   try {
     if (await User.findById(req.params.id)) {
-      await Product.findByIdAndUpdate(
-        productId,
-        req.body,
-        { new: true },
-        (error, product) => {
-          if (error) {
-            return res.status(500).json({ error: error.message })
-          }
-          if (!product) {
-            return res.status(404).json({ message: 'Product not found!' })
-          }
-          res.status(200).json(product)
-        }
-      )
+      const product = await Product.findByIdAndUpdate(productId, req.body, { new: true })
+      res.status(200).json(product)
     }
     throw new Error(`User ${req.params.id} does not exist!`)
   } catch (error) {

@@ -13,6 +13,7 @@ const insertData = async () => {
     roles: ['admin'],
     password_digest: await bcrypt.hash('!a$ecureP@ssw0Rd55!', 11),
     products: [],
+    wishlist: [],
   })
   await user1.save()
 
@@ -22,6 +23,7 @@ const insertData = async () => {
     roles: ['basic'],
     password_digest: await bcrypt.hash('!$h0pp3R1', 11),
     products: [],
+    wishlist: [],
   })
   await user2.save()
 
@@ -31,6 +33,7 @@ const insertData = async () => {
     roles: ['manager'],
     password_digest: await bcrypt.hash('!$eller4Lif3', 11),
     products: [],
+    wishlist: [],
   })
   await user3.save()
 
@@ -40,6 +43,7 @@ const insertData = async () => {
     roles: ['manager'],
     password_digest: await bcrypt.hash('L0v32!p4int', 11),
     products: [],
+    wishlist: [],
   })
   await user4.save()
 
