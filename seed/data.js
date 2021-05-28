@@ -1,7 +1,7 @@
-const db = require('../db/connection')
-const Product = require('../models/product')
-const User = require('../models/user')
-const bcrypt = require('bcrypt')
+import db from '../db/connection.js'
+import Product from '../models/product.js'
+import User from '../models/user.js'
+import bcrypt from 'bcrypt'
 
 const insertData = async () => {
   // reset database
