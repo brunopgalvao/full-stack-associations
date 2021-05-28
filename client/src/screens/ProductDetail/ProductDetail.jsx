@@ -1,11 +1,23 @@
 import { useState, useEffect } from 'react'
 import './ProductDetail.css'
-import { Layout } from '../../components'
-import { getProduct, deleteProduct } from '../../services/products'
+import { Layout, ReviewForm, Reviews } from '../../components'
+import { getProduct, deleteProduct, updateProduct } from '../../services/products'
 import { useParams, Link } from 'react-router-dom'
+import StarRating from 'star-rating-react'
 
 const ProductDetail = (props) => {
-  const [product, setProduct] = useState(null)
+  const [product, setProduct] = useState({
+    name: '',
+    description: '',
+    imgURL: '',
+    price: '',
+    reviews: [],
+  })
+  const [review, setReview] = useState({
+    author: '',
+    rating: '',
+    description: '',
+  })
   const [isLoaded, setLoaded] = useState(false)
   const { id } = useParams()
 
@@ -17,6 +29,21 @@ const ProductDetail = (props) => {
     }
     fetchProduct()
   }, [id])
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setReview({
+      ...review,
+      [name]: value,
+    })
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    product.reviews.push(review)
+    setProduct(product)
+    await updateProduct(id, product)
+  }
 
   if (!isLoaded) {
     return <h1>Loading...</h1>
@@ -33,6 +60,15 @@ const ProductDetail = (props) => {
         <div className='detail'>
           <div className='name'>{product.name}</div>
           <div className='seller'>by {product.userId.username}</div>
+          <div className='rating'>
+            <StarRating
+              size={product.rating}
+              value={product.rating}
+              onChange={function (val) {
+                console.log(val)
+              }}
+            />
+          </div>
           <div className='price'>{`$${product.price}`}</div>
           <div className='description'>{product.description}</div>
           <div className='button-container'>
@@ -47,6 +83,16 @@ const ProductDetail = (props) => {
             </button>
           </div>
         </div>
+      </div>
+      <div className='reviews-wrapper'>
+        <ReviewForm
+          author={review.author}
+          rating={review.rating}
+          description={review.description}
+          onSubmit={handleSubmit}
+          onChange={handleChange}
+        />
+        <Reviews reviews={product.reviews} />
       </div>
     </Layout>
   )

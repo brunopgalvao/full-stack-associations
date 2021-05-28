@@ -79,6 +79,25 @@
     color: white;
 }
 
+.reviews-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.review-create-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.product-reviews {
+    width: 100%;
+}
+
+.review-submit-button {
+    width: 50%;
+}
+
 @media (max-width: 1024px) {
     .name {
         font-size: 32px;

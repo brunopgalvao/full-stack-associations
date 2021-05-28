@@ -57,6 +57,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '130',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 002',
@@ -66,6 +71,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '100',
       userId: user3,
+        reviews: [{
+          author: "Bruno G.",
+          rating: 5,
+          description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+        }, {
+          author: "Mick R.",
+          rating: 4,
+          description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+        }, {
+          author: "Megan B.",
+          rating: 3,
+          description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+        }]
     },
     {
       name: 'Product 003',
@@ -75,6 +93,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '140',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Megan B.",
+        rating: 5,
+        description: "Excellent product!"
+      }]
     },
     {
       name: 'Product 004',
@@ -84,6 +111,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '168',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }]
     },
     {
       name: 'Product 005',
@@ -93,6 +129,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 006',
@@ -102,6 +143,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '130',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Megan B.",
+        rating: 5,
+        description: "Excellent product!"
+      }]
     },
     {
       name: 'Product 007',
@@ -111,6 +161,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '130',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 008',
@@ -120,6 +175,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '128',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
     {
       name: 'Product 009',
@@ -129,6 +197,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Megan B.",
+        rating: 1,
+        description: "Bad product!"
+      }]
     },
     {
       name: 'Product 010',
@@ -137,6 +214,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '140',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 011',
@@ -146,6 +228,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '128',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }]
     },
     {
       name: 'Product 012',
@@ -155,6 +246,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 013',
@@ -164,6 +260,15 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
     {
       name: 'Product 014',
@@ -172,6 +277,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 015',
@@ -181,6 +291,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '90',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
     {
       name: 'Product 016',
@@ -189,6 +312,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '140',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
     {
       name: 'Product 017',
@@ -198,6 +334,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '170',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 018',
@@ -207,6 +348,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '110',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 019',
@@ -216,6 +362,11 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '80',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }]
     },
     {
       name: 'Product 020',
@@ -225,6 +376,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '180',
       userId: user3,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
     {
       name: 'Product 021',
@@ -234,6 +398,19 @@ const insertData = async () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       price: '70',
       userId: user4,
+      reviews: [{
+        author: "Bruno G.",
+        rating: 5,
+        description: "Risus ultricies tristique nulla aliquet. Id volutpat lacus laoreet non curabitur gravida. Enim diam vulputate ut pharetra sit amet aliquam id diam. Duis convallis convallis tellus id interdum velit laoreet id. Aliquam sem fringilla ut morbi tincidunt augue interdum velit. Dolor sit amet consectetur adipiscing elit ut aliquam purus sit. Pellentesque sit amet porttitor eget. Sit amet consectetur adipiscing elit ut aliquam purus sit. Massa tincidunt nunc pulvinar sapien. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc sed blandit libero volutpat sed cras ornare arcu. Pharetra diam sit amet nisl suscipit."
+      }, {
+        author: "Mick R.",
+        rating: 4,
+        description: "Parturient montes nascetur ridiculus mus mauris vitae ultricies. Nisi porta lorem mollis aliquam ut porttitor leo a. Erat nam at lectus urna. Nisl pretium fusce id velit ut tortor pretium viverra. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam. Erat nam at lectus urna. Placerat in egestas erat imperdiet sed. Augue neque gravida in fermentum et sollicitudin ac orci phasellus."
+      }, {
+        author: "Megan B.",
+        rating: 3,
+        description: "Dignissim enim sit amet venenatis urna. Cras adipiscing enim eu turpis egestas pretium aenean. Lacus suspendisse faucibus interdum posuere. Cursus metus aliquam eleifend mi in nulla posuere. Viverra nam libero justo laoreet sit amet cursus."
+      }]
     },
   ]
 
