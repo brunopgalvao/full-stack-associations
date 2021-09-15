@@ -19,4 +19,21 @@ const Product = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 )
 
+// forEach example
+// Product.virtual('rating').get(function () {
+//   let totalRating = 0
+//   this.reviews.forEach(review => {
+//     totalRating = totalRating + review.rating
+//   })
+//   return totalRating / this.reviews.length
+// })
+
+Product.virtual('rating').get(function () {
+  let totalRating = 0
+  this.reviews.forEach(review => {
+    totalRating = review.rating + totalRating
+  })
+  return totalRating / this.reviews.length
+})
+
 export default mongoose.model('products', Product)

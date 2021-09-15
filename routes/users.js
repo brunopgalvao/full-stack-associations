@@ -8,6 +8,9 @@ router.post('/sign-in', controllers.signIn)
 router.get('/verify', controllers.verify)
 router.post('/change-password', controllers.changePassword)
 
+router.get('/users/:id', controllers.getUser)
+
+// nested routes
 router.get('/users/:id/products', controllers.getUserProducts)
 router.get('/users/:id/products/:productId', controllers.getUserProduct)
 router.post('/users/:id/products', controllers.createUserProduct)
