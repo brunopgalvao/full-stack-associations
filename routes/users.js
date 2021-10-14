@@ -1,5 +1,7 @@
 import { Router } from 'express'
 import * as controllers from '../controllers/users.js'
+import isLoggedIn from '../helpers/isLoggedIn.js'
+import isManager from '../helpers/isManager.js'
 
 const router = Router()
 
@@ -17,14 +19,14 @@ router.get('/users', controllers.getUsers)
 // generic nested routes
 router.get('/users/:id/products', controllers.getUserProducts)
 router.get('/users/:id/products/:productId', controllers.getUserProduct)
-router.post('/users/:id/products', controllers.createUserProduct)
-router.put('/users/:id/products/:productId', controllers.updateUserProduct)
-router.delete('/users/:id/products/:productId', controllers.deleteUserProduct)
+router.post('/users/:id/products', isManager, controllers.createUserProduct)
+router.put('/users/:id/products/:productId', isManager, controllers.updateUserProduct)
+router.delete('/users/:id/products/:productId', isManager, controllers.deleteUserProduct)
 
 // custom nested routes
-router.get("/users/:id/cart", controllers.getCart)
-router.post("/users/:id/cart/:cartItemId", controllers.addToCart)
-router.delete("/users/:id/cart/:cartItemId", controllers.removeFromCart)
-router.delete("/users/:id/cart", controllers.clearCart)
+router.get("/users/:id/cart", isLoggedIn, controllers.getCart)
+router.post("/users/:id/cart/:cartItemId", isLoggedIn, controllers.addToCart)
+router.delete("/users/:id/cart/:cartItemId", isLoggedIn, controllers.removeFromCart)
+router.delete("/users/:id/cart", isLoggedIn, controllers.clearCart)
 
 export default router

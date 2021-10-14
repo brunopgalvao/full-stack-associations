@@ -4,8 +4,7 @@ import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
 import Product from '../models/product.js'
 
-const SALT_ROUNDS = process.env.SALT_ROUNDS || 11
-const TOKEN_KEY = process.env.TOKEN_KEY || 'areallylonggoodkey'
+import { SALT_ROUNDS, TOKEN_KEY } from '../config.js'
 
 // for JWT expiration
 const today = new Date()
@@ -28,6 +27,7 @@ export const signUp = async (req, res) => {
       id: user._id,
       username: user.username,
       email: user.email,
+      roles: user.roles,
       exp: parseInt(exp.getTime() / 1000),
     }
 
@@ -132,7 +132,7 @@ export const createUserProduct = async (req, res) => {
     if (await User.findById(req.body.userId)) {
       const userProduct = new Product(req.body)
       await userProduct.save()
-      res.status(201).json(product)
+      res.status(201).json(userProduct)
     }
     throw new Error(`User ${req.body.userId} does not exist!`)
   } catch (error) {
@@ -156,6 +156,14 @@ export const updateUserProduct = async (req, res) => {
 
 export const deleteUserProduct = async (req, res) => {
   try {
+    // Are they the original creator of the product?
+    // OR
+    // Are they an admin?
+    // If they are, let the delete the product
+    const user = await User.findById(req.params.id)
+    if (user.roles === 'admin') { 
+      // do something 
+    }
     if (await User.findById(req.params.id)) {
       const deleted = await Product.findByIdAndDelete(req.params.productId)
       if (deleted) {
@@ -172,8 +180,8 @@ export const deleteUserProduct = async (req, res) => {
 
 export const getCart = async (req, res) => {
   try {
-    const cart = await User.findById(req.params.id).populate('products');
-    res.json(cart.cart);
+    const user = await User.findById(req.params.id)
+    res.json(user.cart);
   } catch (error) {
     console.log(error.message);
     res.status(500).json({ error: error.message });

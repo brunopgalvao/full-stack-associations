@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
-const TOKEN_KEY = process.env.TOKEN_KEY || 'areallylonggoodkey'
+import { TOKEN_KEY } from '../config.js'
 
-const restrict = (req, res, next) => {
+const isLoggedIn = (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1]
     if (jwt.verify(token, TOKEN_KEY)) {
@@ -13,4 +13,4 @@ const restrict = (req, res, next) => {
   }
 }
 
-export default restrict
+export default isLoggedIn
