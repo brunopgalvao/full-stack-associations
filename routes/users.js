@@ -24,7 +24,7 @@ router.put('/users/:id/products/:productId', isManager, controllers.updateUserPr
 router.delete('/users/:id/products/:productId', isManager, controllers.deleteUserProduct)
 
 // custom nested routes
-router.get("/users/:id/cart", isLoggedIn, controllers.getCart)
+router.get("/users/:id/cart", controllers.getCart)
 router.post("/users/:id/cart/:cartItemId", isLoggedIn, controllers.addToCart)
 router.delete("/users/:id/cart/:cartItemId", isLoggedIn, controllers.removeFromCart)
 router.delete("/users/:id/cart", isLoggedIn, controllers.clearCart)
