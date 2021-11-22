@@ -188,20 +188,20 @@ export const deleteUserProduct = async (req, res) => {
 
 export const getCart = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
-        const cart = await Promise.all(user.cart.map(async (item) => {
-            const product = await Product.findById(item.productId)
-            return {
-                product,
-                quantity: item.quantity
-            }
-        }))
-        res.json(cart);
+      const user = await User.findById(req.params.id)
+      const cart = await Promise.all(user.cart.map(async (item) => {
+          const product = await Product.findById(item.productId)
+          return {
+              product,
+              quantity: item.quantity
+          }
+      }))
+      res.json(cart);
     } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ error: error.message });
+      console.log(error.message);
+      res.status(500).json({ error: error.message });
     }
-};
+  };
 
 export const addToCart = async (req, res) => {
     try {
