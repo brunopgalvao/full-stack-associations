@@ -147,7 +147,7 @@ export const updateUserProduct = async (req, res) => {
     try {
         if (await User.findById(req.params.id)) {
             const product = await Product.findByIdAndUpdate(
-                productId,
+                req.params.productId,
                 req.body,
                 { new: true }
             );
@@ -167,7 +167,7 @@ export const deleteUserProduct = async (req, res) => {
         // Are they an admin?
         // If they are, let the delete the product
         const user = await User.findById(req.params.id);
-        if (user.roles === "admin") {
+        if (user.roles.includes("admin")) {
             // do something
         }
         if (await User.findById(req.params.id)) {
